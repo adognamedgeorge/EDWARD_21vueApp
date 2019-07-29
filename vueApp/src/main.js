@@ -8,6 +8,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Cube from 'cube-ui'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 Vue.use(Cube)
 // import {
 //   /* eslint-disable no-unused-vars */
