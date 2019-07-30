@@ -10,15 +10,15 @@
     </div>
     <div class="input">
       <span>密码</span>
-      <cube-input v-model="text2" placeholder="输入你的账号密码"></cube-input>
+      <cube-input v-model="text2" placeholder="输入你的账号密码" type="password"></cube-input>
     </div>
     <cube-validator v-model="valid" :model="text" :rules="rules" :messages="messages"></cube-validator>
     <cube-validator :rules="rules2" :model="text2"></cube-validator>
     <div class="button">
-      <cube-button @click="toLogin" :disabled="isPrimary" :class="{ active: !isPrimary }">确认登录</cube-button>
+      <cube-button @click="toLogin" :disabled="isDisabled" :class="{ active: !isDisabled }">确认登录</cube-button>
     </div>
     <div class="button">
-      <cube-button :light="true">手机号登录</cube-button>
+      <cube-button :light="true" @click="toPhone">手机号登录</cube-button>
     </div>
   </div>
 </template>
@@ -42,7 +42,7 @@ export default {
       messages: {
         pattern: 'The E-mail suffix need to be didi.com.'
       },
-      isPrimary: true
+      isDisabled: true
     }
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
       })
       .then(res => {
         if (res.data.status === 'success') {
-          this.showToast()
+          this.showToast('onLoading...', 500, './notice')
         } else {
           const toast = this.$createToast({
             txt: res.data.info,
@@ -66,22 +66,26 @@ export default {
           console.log(err)
         })
     },
-    showToast () {
+    showToast (txt, time, url) {
       const toast = this.$createToast({
-        txt: 'Loading...',
-        time: 500,
+        txt: txt,
+        time: time,
         onTimeout: () => {
-          this.$router.push('./notice')
+          this.$router.push(url)
         }
       })
       toast.show()
+    },
+    toPhone () {
+      this.showToast('手机号登录', 500, './phone')
     }
   },
+  // 页面更新改变按钮颜色
   updated () {
     if (this.text !== '' && this.text2 !== '') {
-      this.isPrimary = false
+      this.isDisabled = false
     } else if (this.text === '' || this.text2 === '') {
-      this.isPrimary = true
+      this.isDisabled = true
     }
   }
 }
