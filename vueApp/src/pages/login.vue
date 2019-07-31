@@ -111,7 +111,7 @@ export default {
       border: none;
     }
     span {
-      font-size: 50%;
+      font-size: .5rem;
       margin: auto auto;
       flex: 1;
     }

@@ -4,12 +4,13 @@
     <div class="input">
       <span>验证码</span>
       <cube-input v-model="code" placeholder="输入6位验证码"></cube-input>
-      <button @click="getCode" :disabled="isTrue">{{btnText}}</button>
+      <button @click="getCode" :disabled="isTrue" :class="{ red: !isTrue }">{{btnText}}</button>
     </div>
     <cube-validator :model="code" :rules="rules" :messages="messages"></cube-validator>
     <div class="button">
       <cube-button :disabled="isDisabled" :class="{active: !isDisabled}" @click="toLogin">登录</cube-button>
     </div>
+    <Item>dddddd</Item>
   </div>
 </template>
 
@@ -48,12 +49,14 @@ export default {
     },
     toLogin () {
       this.axios.post('https://easy-mock.com/mock/5d3ea2704e2ade1e90758673/vue/phonecodeLogin', {
-        userPhone: 13071859541,
-        code: 987612
+        userPhone: this.phone,
+        code: this.code
       })
         .then(res => {
           if (res.data.code === 'success') {
             this.showToast('Login...', 600, './notice')
+          } else {
+            this.showToast('验证码错误', 500)
           }
         })
         .catch(err => {
@@ -77,6 +80,10 @@ export default {
     } else {
       this.isDisabled = true
     }
+  },
+  // 生命周期里接收从phone页面路由传参过来的参数
+  created () {
+    this.phone = this.$route.query.phone
   }
 }
 </script>
@@ -99,12 +106,13 @@ export default {
       border: none;
     }
     span {
-      font-size: 50%;
+      font-size: .5rem;
       margin: auto auto;
     }
     button {
       height: 1rem;
       margin: auto;
+      font-size: .2rem;
     }
   }
   .button {
@@ -113,6 +121,10 @@ export default {
   }
   .active {
     background-color: red;
+  }
+  .red {
+    border: 1px solid red;
+    color: red;
   }
 }
 </style>

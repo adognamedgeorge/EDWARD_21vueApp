@@ -38,7 +38,12 @@ export default {
         txt: txt,
         time: time,
         onTimeout: () => {
-          this.$router.push(url)
+          this.$router.push({
+            path: url,
+            query: {
+              phone: this.phone
+            }
+          })
         }
       })
       toast.show()
@@ -72,7 +77,7 @@ export default {
       border: none;
     }
     span {
-      font-size: 50%;
+      font-size: .5rem;
       margin: auto auto;
       flex: 1;
     }

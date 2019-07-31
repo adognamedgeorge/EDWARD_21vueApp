@@ -11,10 +11,12 @@ import Cube from 'cube-ui'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import common from './js/common.js'
+import tabbar from './js/tabbar.js'
 
 Vue.use(VueAxios, axios)
 Vue.use(Cube)
 Vue.use(common)
+Vue.use(tabbar)
 // import {
 //   /* eslint-disable no-unused-vars */
 //   Style,
