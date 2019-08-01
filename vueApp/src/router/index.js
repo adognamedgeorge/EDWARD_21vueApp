@@ -4,6 +4,9 @@ import Login from '@/pages/login'
 import Notice from '@/pages/notice'
 import Phone from '@/pages/phone'
 import Code from '@/pages/code'
+import Book from '@/pages/telbook'
+import Work from '@/pages/workplatform'
+import Mine from '@/pages/mine'
 
 Vue.use(Router)
 
@@ -28,6 +31,21 @@ export default new Router({
       path: '/code',
       name: 'Code',
       component: Code
+    },
+    {
+      path: '/book',
+      name: 'Book',
+      component: Book
+    },
+    {
+      path: '/work',
+      name: 'Work',
+      component: Work
+    },
+    {
+      path: '/mine',
+      name: 'Mine',
+      component: Mine
     }
   ]
 })

@@ -18,31 +18,31 @@ export default {
   },
   data () {
     return {
-      selected: 'book',
+      selected: 'notice',
       tabbars: [
         {
           txt: '公告',
           page: 'notice',
-          normalImg: require('../assets/bug.jpg'),
-          activeImg: require('../assets/logo.png')
+          normalImg: require('../assets/order.png'),
+          activeImg: require('../assets/order_active.png')
         },
         {
           txt: '通讯录',
           page: 'book',
-          normalImg: require('../assets/bug.jpg'),
-          activeImg: require('../assets/logo.png')
+          normalImg: require('../assets/telbook.png'),
+          activeImg: require('../assets/telbook_active.png')
         },
         {
           txt: '工作台',
-          page: 'working',
-          normalImg: require('../assets/bug.jpg'),
-          activeImg: require('../assets/logo.png')
+          page: 'work',
+          normalImg: require('../assets/work.png'),
+          activeImg: require('../assets/work_active.png')
         },
         {
           txt: '我的',
           page: 'mine',
-          normalImg: require('../assets/bug.jpg'),
-          activeImg: require('../assets/logo.png')
+          normalImg: require('../assets/mine.png'),
+          activeImg: require('../assets/mine_active.png')
         }
       ]
     }

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    公告
+  <div id="notice">
+    <h3>公告</h3>
     <tabbar></tabbar>
   </div>
 </template>
@@ -11,6 +11,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+#notice {
+  h3 {
+    font-size: .6rem;
+  }
+}
 </style>
