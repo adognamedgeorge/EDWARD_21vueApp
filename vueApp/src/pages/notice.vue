@@ -1,13 +1,18 @@
 <template>
   <div id="notice">
-    <h3>公告</h3>
+    <Header :txt="txt"></Header>
     <tabbar></tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Notice'
+  name: 'Notice',
+  data () {
+    return {
+      txt: '公告'
+    }
+  }
 }
 </script>
 

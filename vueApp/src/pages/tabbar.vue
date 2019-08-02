@@ -1,7 +1,7 @@
 <template>
   <div id="tabbarWrap">
     <div class="wrap">
-      <Item v-for="item in tabbars" :key="item.index" :txt="item.txt" :page="item.page" :sel="selected" @change="getVal">
+      <Item v-for="item in tabbars" :key="item.index" :txt="item.txt" :page="item.page" :sel="selected" v-on:change="getVal">
         <img :src="item.normalImg" slot="normalImg">
         <img :src="item.activeImg" slot="activeImg">
       </Item>

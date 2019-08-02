@@ -1,12 +1,18 @@
 <template>
   <div>
-    通讯录
+    <Header :txt="txt"></Header>
+    <tabbar></tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Book'
+  name: 'Book',
+  data () {
+    return {
+      txt: '通讯录'
+    }
+  }
 }
 </script>
 

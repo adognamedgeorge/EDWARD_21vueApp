@@ -1,5 +1,5 @@
 <template>
-  <div class="itemWrap" @click="changePage">
+  <div class="itemWrap" @click="changePage(page)">
     <span v-show="!bol">
       <slot name="normalImg"></slot>
     </span>
@@ -19,28 +19,28 @@ export default {
     sel: String
   },
   methods: {
-    changePage () {
-      this.$emit('change', this.page)
-      this.showToast('To' + ' ' + this.page + '...', 600, '/' + this.page)
-    },
-    showToast (txt, time, url) {
-      const toast = this.$createToast({
-        txt: txt,
-        time: time,
-        onTimeout: () => {
-          this.$router.push(url)
-        }
-      })
-      toast.show()
+    changePage (page) {
+      this.$emit('change', page)
+      this.$router.push('/' + page)
+      // this.showToast('To' + ' ' + this.page + '...', 600, '/' + this.page)
     }
+    // showToast (txt, time, url) {
+    //   const toast = this.$createToast({
+    //     txt: txt,
+    //     time: time,
+    //     onTimeout: () => {
+    //       this.$router.push(url)
+    //     }
+    //   })
+    //   toast.show()
+    // }
   },
   computed: {
     bol () {
       if (this.sel === this.page) {
         return true
-      } else {
-        return false
       }
+      return false
     }
   }
 }

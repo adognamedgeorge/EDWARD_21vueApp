@@ -1,12 +1,18 @@
 <template>
   <div>
-    工作台
+    <Header :txt="txt"></Header>
+    <tabbar></tabbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Work'
+  name: 'Work',
+  data () {
+    return {
+      txt: '工作台'
+    }
+  }
 }
 </script>
 
