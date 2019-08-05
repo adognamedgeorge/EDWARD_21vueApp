@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :txt="txt"></Header>
-    <tabbar></tabbar>
+    <!--<tabbar></tabbar>-->
   </div>
 </template>
 

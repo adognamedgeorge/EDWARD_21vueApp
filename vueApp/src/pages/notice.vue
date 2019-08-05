@@ -1,13 +1,17 @@
 <template>
   <div id="notice">
     <Header :txt="txt"></Header>
-    <tabbar></tabbar>
+    <notice-item></notice-item>
   </div>
 </template>
 
 <script>
+import NoticeItem from '../components/noticeItem'
 export default {
   name: 'Notice',
+  components: {
+    NoticeItem
+  },
   data () {
     return {
       txt: '公告'
