@@ -1,16 +1,18 @@
 <template>
   <div id="code">
-    <h3>输入验证码</h3>
-    <div class="input">
-      <span>验证码</span>
-      <cube-input v-model="code" placeholder="输入6位验证码"></cube-input>
-      <button @click="getCode" :disabled="isTrue" :class="{ red: !isTrue }">{{btnText}}</button>
+    <Header :text="text" :turn="turn"></Header>
+    <div class="box">
+      <h3>输入验证码</h3>
+      <div class="input">
+        <span>验证码</span>
+        <cube-input v-model="code" placeholder="输入6位验证码"></cube-input>
+        <button @click="getCode" :disabled="isTrue" :class="{ red: !isTrue }">{{btnText}}</button>
+      </div>
+      <cube-validator :model="code" :rules="rules" :messages="messages"></cube-validator>
+      <div class="button">
+        <cube-button :disabled="isDisabled" :class="{active: !isDisabled}" @click="toLogin">登录</cube-button>
+      </div>
     </div>
-    <cube-validator :model="code" :rules="rules" :messages="messages"></cube-validator>
-    <div class="button">
-      <cube-button :disabled="isDisabled" :class="{active: !isDisabled}" @click="toLogin">登录</cube-button>
-    </div>
-    <Item>dddddd</Item>
   </div>
 </template>
 
@@ -20,6 +22,8 @@ export default {
   data () {
     return {
       code: '',
+      text: '返回',
+      turn: '/phone',
       rules: {
         required: true,
         type: 'number',

@@ -1,13 +1,16 @@
 <template>
   <div id="phone">
-    <h3>手机号登录</h3>
-    <div class="input">
-      <span>手机号</span>
-      <cube-input v-model="phone" placeholder="输入你的手机号"></cube-input>
-    </div>
-    <cube-validator :model="phone" :rules="rules" :messages="messages"></cube-validator>
-    <div class="button">
-      <cube-button :disabled="isDisabled" :class="{active: !isDisabled}" @click="toCode">下一步</cube-button>
+    <Header :text="text" :turn="turn"></Header>
+    <div class="content">
+      <h3>手机号登录</h3>
+      <div class="input">
+        <span>手机号</span>
+        <cube-input v-model="phone" placeholder="输入你的手机号"></cube-input>
+      </div>
+      <cube-validator :model="phone" :rules="rules" :messages="messages"></cube-validator>
+      <div class="button">
+        <cube-button :disabled="isDisabled" :class="{active: !isDisabled}" @click="toCode">下一步</cube-button>
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +21,9 @@ export default {
   data () {
     return {
       phone: '',
+      txt: '手机号登录',
+      text: '返回',
+      turn: '/notice',
       rules: {
         required: true,
         type: 'phone',
@@ -61,8 +67,14 @@ export default {
 
 <style scoped lang="scss">
 #phone {
+  .content {
+    margin-top: 1.3rem;
+  }
   h3 {
     font-size: .6rem;
+    text-align: left;
+    margin: 0 0 .6rem .5rem;
+    color: #323233;
   }
   .input {
     border-bottom: 1px solid lightgrey;

@@ -7,6 +7,7 @@ import Code from '@/pages/code'
 import Book from '@/pages/telbook'
 import Work from '@/pages/workplatform'
 import Mine from '@/pages/mine'
+import Second from '@/components/secondItem'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/mine',
       name: 'Mine',
       component: Mine
+    },
+    {
+      path: '/secondItem',
+      name: 'Second',
+      component: Second
     }
   ]
 })

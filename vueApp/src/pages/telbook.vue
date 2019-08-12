@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :txt="txt"></Header>
-    <!--<tabbar></tabbar>-->
+    <tabbar :page2="page"></tabbar>
   </div>
 </template>
 
@@ -10,7 +10,8 @@ export default {
   name: 'Book',
   data () {
     return {
-      txt: '通讯录'
+      txt: '通讯录',
+      page: 'book'
     }
   }
 }

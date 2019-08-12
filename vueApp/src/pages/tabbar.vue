@@ -16,6 +16,9 @@ export default {
   components: {
     Item
   },
+  props: {
+    page2: String
+  },
   data () {
     return {
       selected: 'notice',
@@ -51,6 +54,9 @@ export default {
     getVal (res) {
       this.selected = res
     }
+  },
+  created () {
+    this.selected = this.page2
   }
 }
 </script>

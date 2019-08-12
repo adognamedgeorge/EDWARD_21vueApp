@@ -2,6 +2,7 @@
   <div id="notice">
     <Header :txt="txt"></Header>
     <notice-item></notice-item>
+    <tabbar :page2="page"></tabbar>
   </div>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   },
   data () {
     return {
-      txt: '公告'
+      txt: '公告',
+      page: 'notice'
     }
   }
 }

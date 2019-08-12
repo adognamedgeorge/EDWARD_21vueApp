@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :txt="txt"></Header>
-    <!--<tabbar></tabbar>-->
+    <tabbar :page2="page"></tabbar>
   </div>
 </template>
 
@@ -10,7 +10,8 @@ export default {
   name: 'Work',
   data () {
     return {
-      txt: '工作台'
+      txt: '工作台',
+      page: 'work'
     }
   }
 }
