@@ -1,6 +1,6 @@
 <template>
   <div class="head">
-    <div class="box" @click="toPage(turn)">
+    <div class="box" @click="toPage(turn)" v-show="isShow">
       <span>
         <img src="../assets/back.png" alt=""/>
       </span>
@@ -16,7 +16,8 @@ export default {
   props: {
     txt: String,
     text: String,
-    turn: String
+    turn: String,
+    isShow: Boolean
   },
   methods: {
     toPage (param) {
@@ -28,7 +29,7 @@ export default {
 
 <style scoped lang="scss">
 .head {
-  font-size: .6rem;
+  font-size: .5rem;
   position: relative;
   height: 1.1rem;
   display: flex;
