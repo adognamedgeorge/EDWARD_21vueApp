@@ -73,11 +73,11 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: .5rem;
+    font-size: .3rem;
     border-top: 1px solid #eee;
     img {
-      width: .9rem;
-      height: .9rem;
+      width: .5rem;
+      height: .5rem;
     }
   }
 }

@@ -4,37 +4,26 @@
     <div class="input">
       <cube-input :placeholder="placeholder" type="text" v-model="value"></cube-input>
     </div>
-    <div class="list">
-      <cube-index-list :data="telData"></cube-index-list>
+    <div>
+      <telist></telist>
     </div>
     <tabbar :page2="page"></tabbar>
   </div>
 </template>
 
 <script>
+import telist from '../components/telist'
 export default {
   name: 'Book',
+  components: {
+    telist
+  },
   data () {
     return {
       txt: '通讯录',
       page: 'book',
       placeholder: '搜索姓名',
-      value: '',
-      telData: [
-        {
-          'name': 'C',
-          'items': [
-            {
-              'name': '陈文章',
-              'value': 1
-            },
-            {
-              'name': 'ffff',
-              'value': 2
-            }
-          ]
-        }
-      ]
+      value: ''
     }
   }
 }
@@ -49,9 +38,6 @@ export default {
       border-radius: .05rem;
       text-align: center;
     }
-  }
-  .list {
-    height: 10rem;
   }
 }
 </style>
