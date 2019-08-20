@@ -75,9 +75,10 @@ export default {
     align-items: center;
     font-size: .3rem;
     border-top: 1px solid #eee;
+    padding-top: .2rem;
     img {
-      width: .5rem;
-      height: .5rem;
+      width: .7rem;
+      height: .7rem;
     }
   }
 }

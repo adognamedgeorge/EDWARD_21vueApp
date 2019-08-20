@@ -106,9 +106,9 @@ export default {
     showBtn (name, tel) {
       this.$createDialog({
         type: 'confirm',
-        icon: 'cubeic-alert',
+        // icon: 'cubeic-alert',
         title: '确定拨打电话？',
-        content: '确定拨打' + name + '的电话号码' + tel,
+        content: '确定要拨打' + name + '的电话号码' + tel,
         confirmBtn: {
           text: '确定',
           active: true,
@@ -125,14 +125,14 @@ export default {
           this.$createToast({
             type: 'warn',
             time: 1000,
-            txt: '点击确认按钮'
+            txt: '拨打电话中...'
           }).show()
         },
         onCancel: () => {
           this.$createToast({
             type: 'warn',
             time: 1000,
-            txt: '点击取消按钮'
+            txt: '已取消...'
           }).show()
         }
       }).show()
@@ -168,7 +168,7 @@ export default {
     }
   }
 }
-.cube-dialog-icon {
-  display: hidden;
+.cube-dialog-content {
+  text-align: center !important;
 }
 </style>
