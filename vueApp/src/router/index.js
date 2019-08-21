@@ -8,6 +8,7 @@ import Book from '@/pages/telbook'
 import Work from '@/pages/workplatform'
 import Mine from '@/pages/mine'
 import Second from '@/components/secondItem'
+import Returns from '@/components/workComponents/returns'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/secondItem',
       name: 'Second',
       component: Second
+    },
+    {
+      path: '/returns',
+      name: 'Returns',
+      component: Returns
     }
   ]
 })

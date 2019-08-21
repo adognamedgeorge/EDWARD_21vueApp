@@ -3,7 +3,7 @@
     <Header :txt="txt"></Header>
     <div class="content">
       <ul>
-        <li v-for="(item, index) in list" :key="index">
+        <li v-for="(item, index) in list" :key="index" @click="toItem(item.title)">
           <div class="left">
             <img :src="item.image" alt="" class="img1">
             <p>{{item.title}}</p>
@@ -49,6 +49,11 @@ export default {
           image: require('../assets/workItem/delivery.png')
         }
       ]
+    }
+  },
+  methods: {
+    toItem (t) {
+      this.$router.push({ path: '/returns', query: { title: t } })
     }
   }
 }
