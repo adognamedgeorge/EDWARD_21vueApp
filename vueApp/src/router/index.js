@@ -9,6 +9,8 @@ import Work from '@/pages/workplatform'
 import Mine from '@/pages/mine'
 import Second from '@/components/secondItem'
 import Returns from '@/components/workComponents/returns'
+import OrderDetail from '@/components/workComponents/orderDetail'
+import ReturnDetail from '@/components/workComponents/returnDetail'
 
 Vue.use(Router)
 
@@ -58,6 +60,16 @@ export default new Router({
       path: '/returns',
       name: 'Returns',
       component: Returns
+    },
+    {
+      path: '/orderDetail',
+      name: 'OrderDetail',
+      component: OrderDetail
+    },
+    {
+      path: '/returnDetail',
+      name: 'ReturnDetail',
+      component: ReturnDetail
     }
   ]
 })

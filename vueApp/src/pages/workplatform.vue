@@ -3,7 +3,7 @@
     <Header :txt="txt"></Header>
     <div class="content">
       <ul>
-        <li v-for="(item, index) in list" :key="index" @click="toItem(item.title)">
+        <li v-for="(item, index) in list" :key="index" @click="toItem(item.path, item.title)">
           <div class="left">
             <img :src="item.image" alt="" class="img1">
             <p>{{item.title}}</p>
@@ -26,7 +26,8 @@ export default {
       list: [
         {
           title: '申请退货',
-          image: require('../assets/workItem/reback.png')
+          image: require('../assets/workItem/reback.png'),
+          path: '/returns'
         },
         {
           title: '退货查询',
@@ -52,8 +53,8 @@ export default {
     }
   },
   methods: {
-    toItem (t) {
-      this.$router.push({ path: '/returns', query: { title: t } })
+    toItem (p, t) {
+      this.$router.push({ path: p, query: { title: t } })
     }
   }
 }

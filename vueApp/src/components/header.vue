@@ -1,12 +1,14 @@
 <template>
-  <div class="head">
-    <div class="box" @click="toPage(turn)" v-show="isShow">
+  <div style="position: fixed; top: 0; left: 0; height: 1.1rem; background-color: white; z-index: 99; margin-bottom: .5rem; width: 100%;">
+    <div class="head">
+      <div class="box" @click="toPage(turn)" v-show="isShow">
       <span>
         <img src="../assets/back.png" alt=""/>
       </span>
-      <i>{{text}}</i>
+        <i>{{text}}</i>
+      </div>
+      <h3 v-text="txt"></h3>
     </div>
-    <h3 v-text="txt"></h3>
   </div>
 </template>
 
@@ -34,6 +36,7 @@ export default {
   height: 1.1rem;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgba(242,242,242,1);
   span {
     width: .6rem;
     height: .6rem;
