@@ -27,18 +27,61 @@
         </div>
       </div>
     </div>
+    <Select :itemList="selectItem"></Select>
   </div>
 </template>
 
 <script>
+import Select from './select'
 export default {
   name: 'ReturnDetail',
+  components: {
+    Select
+  },
   data () {
     return {
       txt: '退货详情',
       text: '返回',
       turn: '/returns',
-      i: this.$route.query.im
+      i: this.$route.query.im,
+      selectItem: [
+        {
+          name: '退货数量',
+          value: '',
+          options: [1, 2, 3, 4, 5, 6],
+          title: '请选择退货数量',
+          rules: {
+            required: true
+          }
+        },
+        {
+          name: '退款方式',
+          value: '现金退款',
+          options: ['现金退款', '线上退款'],
+          title: '请选择退款方式',
+          rules: {
+            required: true
+          }
+        },
+        {
+          name: '异常类型',
+          value: '退货',
+          options: ['退货', '仅退款', '退货退款'],
+          title: '请选择异常类型',
+          rules: {
+            required: true
+          }
+        },
+        {
+          name: '退货原因',
+          value: '日期不好',
+          options: ['日期不好', '人品不好', '颜色太绿'],
+          title: '请选择退货原因',
+          rules: {
+            required: true
+          }
+        }
+      ]
     }
   }
 }

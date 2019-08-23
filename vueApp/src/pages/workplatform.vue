@@ -31,7 +31,8 @@ export default {
         },
         {
           title: '退货查询',
-          image: require('../assets/workItem/backing.png')
+          image: require('../assets/workItem/backing.png'),
+          path: '/returnInquire'
         },
         {
           title: '订单查询',

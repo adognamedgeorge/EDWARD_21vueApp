@@ -1,13 +1,16 @@
 <template>
-  <div style="position: fixed; top: 0; left: 0; height: 1.1rem; background-color: white; z-index: 99; margin-bottom: .5rem; width: 100%;">
-    <div class="head">
-      <div class="box" @click="toPage(turn)" v-show="isShow">
-      <span>
-        <img src="../assets/back.png" alt=""/>
-      </span>
-        <i>{{text}}</i>
+  <div style="height: .6rem;">
+    <div style="position: fixed; top: 0; left: 0; height: 1.1rem; background-color: white; z-index: 99; margin-bottom: .5rem; width: 100%;">
+      <div class="head">
+        <div class="box" @click="toPage(turn)" v-show="isShow">
+          <span>
+            <img src="../assets/back.png" alt=""/>
+          </span>
+          <i>{{text}}</i>
+        </div>
+        <h3 v-text="txt"></h3>
+        <p v-show="isTrue">筛选</p>
       </div>
-      <h3 v-text="txt"></h3>
     </div>
   </div>
 </template>
@@ -19,7 +22,8 @@ export default {
     txt: String,
     text: String,
     turn: String,
-    isShow: Boolean
+    isShow: Boolean,
+    isTrue: Boolean
   },
   methods: {
     toPage (param) {
@@ -48,6 +52,11 @@ export default {
   h3 {
     display: inline-block;
     flex: 1;
+  }
+  p {
+    font-size: .4rem;
+    position: absolute;
+    right: .6rem;
   }
   .box {
     display: flex;
