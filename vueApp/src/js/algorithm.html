@@ -20,20 +20,30 @@
     factorialize(5)
     console.log(factorialize(5))
 
-    const reverseInteger = function (number) {
-      var str = String(number)
+    // const reverseInteger = function (number) {
+    //   let str = String(number)
+    //   if (str.length > 14) return 0
+    //   if (str.charAt(0) ==  '-') {
+    //     return parseInt("-" + str.split("").reverse().join(""))
+    //   }
+    //
+    //   return parseInt(str.split("").reverse().join(""))
+    // }
+    //
+    // reverseInteger(-12345)
+    // console.log(reverseInteger(-12345))
+
+    const fz = function (number) {
+      const str = String(number)
       if (str.length > 14) return 0
-      if (str.charAt(0) ==  '-') {
-        let str_r = String(number).substr(1, str.length)
-        console.log(str_r)
-        return parseInt("-" + str.split("").reverse().join(""))
+      if (str.charAt(0) == '-') {
+        return parseInt('-' + str.split('').reverse().join(''))
       }
-
-      return parseInt(str.split("").reverse().join(""))
+      return parseInt(str.split('').reverse().join(''))
     }
-
-    reverseInteger(-12345)
-    console.log(reverseInteger(-12345))
+    fz(-12345)
+    console.log(fz(-123456))
+    console.log(fz(98765))
   </script>
 </body>
 </html>
