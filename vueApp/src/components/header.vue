@@ -9,7 +9,8 @@
           <i>{{text}}</i>
         </div>
         <h3 v-text="txt"></h3>
-        <p v-show="isTrue">筛选</p>
+        <p v-if="isTrue">筛选</p>
+        <p v-if="isTrue2">保存</p>
       </div>
     </div>
   </div>
@@ -23,7 +24,8 @@ export default {
     text: String,
     turn: String,
     isShow: Boolean,
-    isTrue: Boolean
+    isTrue: Boolean,
+    isTrue2: Boolean
   },
   methods: {
     toPage (param) {

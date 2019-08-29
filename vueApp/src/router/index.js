@@ -12,6 +12,7 @@ import Returns from '@/components/workComponents/returns'
 import OrderDetail from '@/components/workComponents/orderDetail'
 import ReturnDetail from '@/components/workComponents/returnDetail'
 import ReturnInquire from '@/components/workComponents/returnInquire'
+import Set from '@/components/set'
 
 Vue.use(Router)
 
@@ -76,6 +77,11 @@ export default new Router({
       path: '/returnInquire',
       name: 'ReturnInquire',
       component: ReturnInquire
+    },
+    {
+      path: '/set',
+      name: 'Set',
+      component: Set
     }
   ]
 })

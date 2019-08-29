@@ -4,36 +4,39 @@
     <div class="box">
       <div>
         <cube-form>
-          <span @click="showDatePicker1">申请时间</span>
-          <p @click="dateSelectHandler1">{{dateValue1 || value}}</p>
+          <span>申请时间</span>
+          <p @click="showDatePicker1">{{dateValue1 || value}}</p>
         </cube-form>
       </div>
       <div>
         <cube-form>
-          <span @click="showDatePicker2">到</span>
-          <p @select="dateSelectHandler2">{{dateValue2 || value}}</p>
+          <span>到</span>
+          <p @click="showDatePicker2">{{dateValue2 || value}}</p>
         </cube-form>
       </div>
     </div>
     <Scan></Scan>
-    <div class="order_detail">
+    <div class="order_detail" v-for="(item, index) in list" :key="index">
       <div class="title flex_box">
-        <h3>订单号: </h3>
+        <h3 v-text="item.title"></h3>
+        <button class="btn1 btn2" v-if="item.status === 1">待审核</button>
+        <button class="btn1 btn3" v-if="item.status === 2">客服打回</button>
+        <button class="btn1" v-if="item.status === 3">退货成功</button>
       </div>
       <div class="flex_box">
         <div>
-          <span class="span1">订单金额：</span>
-          <span>¥{{}}</span>
+          <span class="span1">可申请数：</span>
+          <span>{{item.enableApply}}</span>
         </div>
         <div>
-          <span class="span1">支付方式：</span>
-          <span>{{}}</span>
+          <span class="span1">实际申请：</span>
+          <span>{{item.realApply}}</span>
         </div>
       </div>
       <div class="flex_box">
         <div>
-          <span class="span1">下单时间：</span>
-          <span>{{}}</span>
+          <span class="span1">小店编号：</span>
+          <span>{{item.shopNo}}</span>
         </div>
       </div>
     </div>
@@ -55,7 +58,30 @@ export default {
       turn: '/work',
       value: '',
       dateValue1: '',
-      dateValue2: ''
+      dateValue2: '',
+      list: [
+        {
+          title: '1995三九橡木桶750ml*6瓶',
+          status: 1,
+          enableApply: 11,
+          realApply: 5,
+          shopNo: 51187645678
+        },
+        {
+          title: '美汁源果粒橙橙味 420ml*12瓶',
+          status: 2,
+          enableApply: 22,
+          realApply: 6,
+          shopNo: 622118232338
+        },
+        {
+          title: '268ml*15瓶雀巢咖啡丝滑拿铁【连锁】',
+          status: 3,
+          enableApply: 33,
+          realApply: 7,
+          shopNo: 755511823232
+        }
+      ]
     }
   },
   methods: {
@@ -139,6 +165,12 @@ export default {
         }
       }
     }
+  }
+  .btn2 {
+    background-color: #FFB319;
+  }
+  .btn3 {
+    background-color: #F38076;
   }
 }
 </style>
